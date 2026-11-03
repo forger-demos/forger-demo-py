@@ -1,0 +1,20 @@
+[project]
+name = "units"
+version = "0.1.0"
+description = "Convert between units of length, mass and temperature from the command line."
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+units = "units.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=units --cov-report=lcov:coverage/lcov.info --cov-report=term"
